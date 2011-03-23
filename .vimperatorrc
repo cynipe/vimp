@@ -1,0 +1,45 @@
+command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
+
+" set {{{
+set scrollbars
+set notabnumbers
+set visualbell
+set defsearch=g
+set hlsearch
+set complete=sl
+set focuscontent
+set editor='env LANG=ja_JP.UTF-8 open -a /Applications/MacVim.app'
+lazy set gui=menu,tabs,navigation
+" }}}
+
+" map {{{
+" 2.0からdが独自に動いてるようなので<M-w>にマップしなおす
+map d <C-w>
+" 選択文字列のコピーを <C-c> に割り当て
+map <C-c> Y
+"j/kの移動量を3倍に増やす
+map j 8<C-e>
+map k 8<C-y>
+"J/Kに半ページスクロールを割り当て
+noremap J <C-d>
+noremap K <C-u>
+"h/lでタブ移動
+noremap h gT
+noremap l gt
+" コマンド
+",a でブックマークに追加
+map ,a :bmark<Space>-T=
+"<C-r>で再起動
+map <C-r> :restart<CR>
+" }}}
+
+" feedSomeKeys
+" GMail
+lazy fmaps -u='mail\.google\.com/mail' -events=vkeydown,keypress,vkeyup j k
+lazy fmaps -u='mail\.google\.com/mail' c n p o u x s r a ? gi gs gt gd ga gc I
+lazy fmaps -u='mail\.google\.com/mail' -p=<Leader> d,# s,! e
+lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c j,n k,p n,j p,k o u x s r a ? gi gs gt gd ga gc
+lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' -p=<Leader> d,# s,! e
+
+" GReader
+lazy fmaps -u='www\.google\.co\.jp/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
