@@ -8,7 +8,6 @@ set defsearch=g
 set hlsearch
 set complete=sl
 set focuscontent
-set editor='~/bin/mvim -f'
 lazy set gui=menu,tabs,navigation
 " }}}
 
