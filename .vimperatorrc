@@ -8,7 +8,7 @@ set defsearch=g
 set hlsearch
 set complete=sl
 set focuscontent
-set editor='env LANG=ja_JP.UTF-8 open -a /Applications/MacVim.app'
+set editor='~/bin/mvim -f'
 lazy set gui=menu,tabs,navigation
 " }}}
 
@@ -43,5 +43,6 @@ lazy fmaps -u='mail\.google\.com/.*/[0-9a-f]+$' -p=<Leader> d,# s,! e
 
 " GReader
 lazy fmaps -u='www\.google\.co\.jp/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
+lazy fmaps -u='www\.google\.com/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
 
 echo "vimperatorrc loaded"
