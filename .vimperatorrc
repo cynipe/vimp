@@ -6,14 +6,12 @@ set notabnumbers
 set visualbell
 set defsearch=g
 set hlsearch
-set complete=sl
+set complete=slh
 set focuscontent
 lazy set gui=menu,tabs,navigation
 " }}}
 
 " map {{{
-" 2.0からdが独自に動いてるようなので<M-w>にマップしなおす
-map d <C-w>
 " 選択文字列のコピーを <C-c> に割り当て
 map <C-c> Y
 "j/kの移動量を3倍に増やす
@@ -32,6 +30,10 @@ map ,a :bmark<Space>-T=
 map <C-r> :restart<CR>
 " }}}
 
+" Plugins
+let g:plugin_loader_roots = "~/dotfiles/vimp/vimperator-plugins/"
+let g:plugin_loader_plugins = "_libly,copy,feedSomeKeys_3,lookupDictionary"
+
 " feedSomeKeys
 " GMail
 lazy fmaps -u='mail\.google\.com/' -events=vkeydown,keypress,vkeyup j k
@@ -43,5 +45,3 @@ lazy fmaps -u='mail\.google\.com/.*/[0-9a-f]+$' -p=<Leader> d,# s,! e
 " GReader
 lazy fmaps -u='www\.google\.co\.jp/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
 lazy fmaps -u='www\.google\.com/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
-
-echo "vimperatorrc loaded"

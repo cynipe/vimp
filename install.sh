@@ -1,5 +1,7 @@
-#!/bin/sh
-RC_DIR=`pwd`
+#!/bin/bash
+current=$(cd $(dirname $0) && pwd)
+plugin_dir=$HOME/.vimperator/plugin
 
-ln -sF $RC_DIR/.vimperator $HOME
-ln -sf $RC_DIR/.vimperatorrc $HOME
+[ -d $plugin_dir ] || mkdir -p $plugin_dir
+ln -sf $current/.vimperatorrc $HOME
+ln -sf $current/vimperator-plugins/plugin_loader.js $plugin_dir
