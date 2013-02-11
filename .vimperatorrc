@@ -5,11 +5,15 @@ set scrollbars
 set notabnumbers
 set visualbell
 set defsearch=g
-set hlsearch
 set complete=slh
 set focuscontent
 lazy set gui=menu,tabs,navigation
 " }}}
+
+" 検索文字をハイライト
+set hlsearch
+"<C-[>の2回押しでハイライト消去
+noremap <ESC><ESC> :nohlsearch<CR><ESC>
 
 " map {{{
 " 選択文字列のコピーを <C-c> に割り当て
